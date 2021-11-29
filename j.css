@@ -1,0 +1,120 @@
+
+body{
+    background-color: black;
+  }
+  body::-webkit-scrollbar {
+    display: none;
+  }
+  .main{
+    display:flex;
+  }
+  @media only screen and (max-width:900px){
+    .main{
+        flex-direction: column;
+        margin:30px;
+      }
+  }
+  .heading{
+      font-size: 35PX;
+      font-family: 'Times New Roman', Times, serif;
+      color: white;
+      text-align: center;
+      justify-content: center;
+     
+  }
+  
+  .card{
+    width: 90%;
+    height: 500px;
+   background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(242,245,248,1) 35%, rgba(236,236,237,1) 100%);
+    box-shadow: 0 13px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    margin: 30px 20px 20px 10px;
+    transition: background-color .5s, box-shadow .5s, margin-left .5s;
+    
+    
+  }
+
+  .card:hover{
+   
+    background-color: #ffff;
+   /* box-shadow: 0 15px 15px red;*/
+    transition: background-color .5s, box-shadow .5s, margin-left .5s;
+    
+  }
+  .post-image{
+    width: 92%;
+    height: 220px;
+    margin: 15px;
+    border-radius: 10px 10px 10px;
+    float: left;
+   /* box-shadow: 4px 4px 8px red;*/
+  }
+  .post-content{
+    width: 90%;
+    height: 250px;
+    float: left;
+    margin-left: 5px;
+    overflow: hidden;
+  }
+  a{
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    color: #000;
+    text-decoration: none;
+  }
+  .post-header{
+    font-size: 28px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: 15px;
+    color: #000000;
+    margin-left: 10px;
+    text-align: center;
+  }
+  .post-text{
+    font-size: 15px;
+    padding-left: 20px;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+    overflow-y: auto;
+    
+  }
+  .author{
+    width: 95%;
+    height: 60px;
+    background-color: #12192c;
+    margin-left: 20px;
+    margin-top: 5px;
+    color:#fff;
+    border-radius:15px;
+    justify-content: center;
+    
+  }
+  .judge-content{
+    width: 60%;
+    height: 60px;
+    margin-left: 10px;
+    float: left;
+    color:#fff;
+    justify-content: center;
+  }
+ 
+  .info{
+    font-size: 20px;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    margin-top: 10px;
+    padding-left: 10px;
+    justify-content: center;
+  }
+  .about{
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    margin-top: -15px;
+    padding-left: 10px;
+    justify-content: center;
+  }
+  

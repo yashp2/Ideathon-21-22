@@ -1,0 +1,402 @@
+:root {
+  font-size: 24px;
+  --text-color: hsl(232, 9%, 72%);
+  --link-color: hsl(232, 9%, 65%);
+  --primary-color: hsl(194, 77%, 47%);
+  --invalid-color: hsl(353, 85%, 56%);
+}
+
+html {
+  box-sizing: border-box;
+  min-height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Gudea', sans-serif;
+  background-color: #90e588;
+  background-image: linear-gradient(to right top, #90e588, #6de9a8, #4bebc7, #32ebe3, #3de9f9);
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.svg {
+  height: 40%;
+  width: 40%;
+  margin: auto;
+}
+
+.form-container,
+.form-select,
+form.active,
+.registration-form > .form-tab.active,
+.login-form .form-tab,
+.registration-form .submit-section,
+.login-form .submit-section,
+.login-form .submit-section .checkbox-container {
+  display: grid;
+}
+
+.form-container {
+  margin: auto;
+  height: 60%;
+  width: 60%;
+}
+
+h1,
+.main {
+  font-weight: 400;
+}
+
+input,
+.input-text-label, label, a {
+  font-size: 0.68rem;
+}
+
+input ~ .label-float,
+.form-error-message {
+  font-size: 0.51rem;
+}
+
+.form-select {
+  position: absolute;
+  left: 25%;
+}
+
+.form-select button,
+.input-text-label,
+.form-error-message {
+  letter-spacing: 0.010em;
+}
+
+h1,
+input,
+label {
+  color: var(--text-color);
+}
+
+input,
+.form-select button,
+.submit-section .secondary-button {
+  background: transparent;
+}
+
+button,
+.submit-section span {
+  cursor: pointer;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1 {
+  font-size: 0.80rem;
+}
+
+input {
+  letter-spacing: 0.030em;
+  width: 100%;
+}
+
+input:invalid {
+  box-shadow: none;
+}
+
+input[type="checkbox"] {
+  width: auto;
+}
+
+a {
+  color: var(--link-color);
+  justify-self: end;
+}
+
+button.primary-button {
+  background: var(--primary-color);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 3px;
+  transition: all 250ms ease;
+}
+
+button.primary-button:hover {
+  background-color: hsl(194, 82%, 53%);
+}
+
+/* submit button arrow animation */
+button.primary-button span {
+  position: relative;
+  transition: 500ms;
+  pointer-events: none;
+}
+
+button.primary-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+button.primary-button:hover span {
+  padding-right: 17px;
+}
+
+button.primary-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+/* ----------------------------- */
+
+button.secondary-button {
+  color: var(--primary-color);
+}
+
+/* secondary button border underline */
+button.secondary-button span {
+  padding-bottom: 2px;
+  pointer-events: none;
+}
+
+button.secondary-button:hover span {
+  border-bottom: solid 1px var(--primary-color);
+}
+/* --------------------------------- */
+
+.registration-form .submit-section button {
+  font-weight: 700;
+}
+
+.registration-form .submit-section button {
+  display: none;
+  transition: all 500ms;
+}
+
+.registration-form .submit-section button.active {
+  display: initial;
+}
+
+.main {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+}
+
+.form-container {
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  grid-row-gap: 22px;
+  width: 500px;
+  padding: 1rem 1.25rem;
+  background-color: #2f3343;
+  background-image: linear-gradient(to bottom, #35394a 0%, #1f222e 100%);
+  border-radius: 9px;
+}
+
+.form-select {
+  position: relative;
+  grid-template-columns: max-content max-content;
+  grid-column-gap: 17px;
+}
+
+.form-select button {
+  position: relative;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 0.97rem;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  transition: all 300ms ease;
+}
+
+.form-select button.active {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.form-select .border {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: all 300ms ease;
+}
+
+form {
+  display: none;
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  grid-row-gap: 30px;
+}
+
+form .form-tab {
+  grid-template-columns: 1fr;
+  grid-auto-rows: max-content;
+  grid-row-gap: 30px;
+  -webkit-animation: slide-in-left 550ms ease-out;
+  -moz-animation: slide-in-left 550ms ease-out;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% { opacity: 0; -webkit-transform: translateX(-10%); }
+  100% { opacity: 1; -webkit-transform: translateX(0); }
+}
+
+@-moz-keyframes slide-in-left {
+  0% { opacity: 0; -moz-transform: translateX(-10%); }
+  100% { opacity: 1; -moz-transform: translateX(0); }
+}
+
+.registration-form .form-tab {
+  display: none;
+}
+
+.form-tab .container {
+  position: relative;
+}
+
+input[type=email],
+input[type=password],
+input[type=text] 
+input [type=radio]
+{
+  padding-bottom: 10px;
+  background: transparent;
+}
+
+.border-effect {
+  border-bottom: 1px solid hsl(230, 12%, 35%);
+}
+
+.border-effect ~ .focus-border {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary-color);
+  transition: 400ms;
+}
+
+/* Keep focus border style if input is focused or if label is floating (it has content) */
+.label-float ~ .focus-border/*,.border-effect:focus ~ .focus-border*/ {
+  transition: 400ms;
+  left: 0;
+}
+
+.input-text-label.label-float ~ .focus-border {
+  width: 100%;
+}
+
+.border-effect.invalid:focus ~ .focus-border, .border-effect.invalid ~ .focus-border {
+  background-color: var(--invalid-color);
+}
+
+.border-effect.invalid:focus ~ .label-float, .border-effect.invalid ~ .label-float {
+  color: var(--invalid-color);
+}
+
+.input-text-label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  transition: all 200ms;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+input ~ .label-float {
+  color: var(--primary-color);
+  opacity: 1;
+  /* transform made the font blurry in chrome so 'top' was used to raise the floating label
+  transform: translate3d(0, -140%, 0);
+  */
+  top: -35%;
+}
+
+.form-error-message {
+  display: none;
+  position: absolute;
+  color: var(--invalid-color);
+  padding-top: 3px;
+}
+
+input.invalid ~ .form-error-message {
+  display: initial;
+}
+
+.submit-section {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.registration-form .submit-section {
+  grid-column-gap: 23px;
+  grid-auto-columns: max-content;
+  grid-auto-flow: column;
+  justify-content: end;
+  font-size: 0.65rem;
+}
+
+.login-form .submit-section {
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 20px;
+  align-items: start;
+}
+
+.login-form .submit-section .checkbox-container {
+  grid-template-columns: max-content max-content;
+  grid-column-gap: 5px;
+  align-content: start;
+}
+
+.login-form .submit-section button {
+  grid-column: 1 / -1;
+}
+
+/* ----------MEDIA QUERIES---------- */
+@media (max-width: 570px) {
+  .main {
+    align-content: start;
+    background-color: #2f3343;
+    background-image: linear-gradient(45deg, #35394a 0%, #1f222e 100%);
+  }
+  
+  .form-container {
+    width: 100%;
+    padding: 0.9rem 0.8rem;
+    border-radius: 0;
+    background: none transparent;
+  }
+}
+
+@media (max-width: 900px) {
+  .form-container {
+    margin-right: 25%;
+  }
+
+  .svg {
+    visibility: hidden;
+  }
+}
+
+/* --------------------------------- */

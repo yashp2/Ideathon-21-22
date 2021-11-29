@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: arial;
+  }
+  .main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+  }
+  .profile-card{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(180deg, rgb(144, 25, 99),rgb(89, 81, 199));
+    padding: 22px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    margin: 0 25px;
+    margin-top: 50px;
+  }
+  .profile-card:hover{
+    border-radius: 10px;
+    height: 260px;
+  }
+  .profile-card .img{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: .6s;
+    z-index: 99;
+    cursor: pointer;
+  }
+  .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+  }
+  .profile-card:hover .img{
+    transform: translateY(-90px);
+  }
+  .profile-card:hover img{
+    border-radius: 10px;
+  }
+  .caption{
+    text-align: center;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: .6s;
+  }
+  .profile-card:hover .caption{
+    opacity: 1;
+  }
+  .caption h3{
+    font-size: 25px;
+   
+  }
+  .caption p{
+    font-size: 17px;
+    color: #f7f9fc;
+    font-weight: bold;
+  }
+  .social-links a{
+    color: #333;
+    font-size: 21px;
+    transition: .6s;
+     
+  }
+  i{
+    margin-top: 10px;
+    padding: 5px;
+  }
+  .social-links a:hover{
+    color: #3785dd;
+  }
+  .team
+  {
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+  @media(max-width:500px)
+  {
+    .profile-card{
+      margin-top: 80px;
+    }
+  }
